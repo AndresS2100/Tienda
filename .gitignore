@@ -33,3 +33,4 @@ build/
 .vscode/
 /src/main/resources/static/audios/prueba-audio.mp3
 /src/main/resources/static/videos/prueba-video.mp4
+/src/main/resources/firebase/techshop-140a1-firebase-adminsdk-8o258-2caee06610.json
