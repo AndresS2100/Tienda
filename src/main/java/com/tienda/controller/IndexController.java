@@ -1,4 +1,4 @@
-
+//sEGUNDO CONTROLLER CLASS
 package com.tienda.controller;
 
 import org.springframework.stereotype.Controller;
@@ -12,7 +12,7 @@ public class IndexController {
     @RequestMapping("/")
     public String paginaInicio(Model model) {
         //model.addAttribute("attribute", "value");
-        return "index";
+        return "index";//LEE MODELO Y VISTA
     }
     
     @RequestMapping("/contacto")
