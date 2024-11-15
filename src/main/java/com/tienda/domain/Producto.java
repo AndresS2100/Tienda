@@ -19,7 +19,7 @@ public class Producto implements Serializable{
     private String descripcion;
     private String detalle;
     private double precio;
-    private int existencia;
+    private int existencias;
     private String rutaImagen;
     private boolean activo;
     
@@ -30,11 +30,11 @@ public class Producto implements Serializable{
     public Producto() {
     }
 
-    public Producto(String descripcion, String detalle, double precio, int existencia, String rutaImagen, boolean activo, Categoria categoria) {
+    public Producto(String descripcion, String detalle, double precio, int existencias, String rutaImagen, boolean activo, Categoria categoria) {
         this.descripcion = descripcion;
         this.detalle = detalle;
         this.precio = precio;
-        this.existencia = existencia;
+        this.existencias = existencias;
         this.rutaImagen = rutaImagen;
         this.activo = activo;
         this.categoria = categoria;

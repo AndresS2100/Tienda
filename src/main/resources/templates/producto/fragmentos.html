@@ -42,9 +42,9 @@
                                 <div class="mb-3">
                                     <label for="categoria.idCategoria">[[#{producto.categoria}]]</label>
                                     <select name="categoria.idCategoria" class="form-select">
-                                        <option th:each="item :${categorias}"
-                                                th:value="${item.idCategorias}"
-                                                th:value="${item.descripcion}"></option>
+                                        <option th:each="item :${categoria}"
+                                                th:value="${item.idCategoria}"
+                                                th:text="${item.descripcion}"></option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
@@ -161,23 +161,23 @@
                                             <div class="card-body">
                                                 <div class="mb-3">
                                                     <label for="categoria.idCategoria">[[#{producto.categoria}]]</label>
-                                                    <select name="categoria.idCategoria th:field="*{categoria.idCategoria}" class="form-select">
-                                                        <option th:each="item :${categorias}"
-                                                                th:value="${item.idCategorias}"
-                                                                th:value="${item.descripcion}"></option>
+                                                    <select name="categoria.idCategoria" th:field="*{categoria.idCategoria}" class="form-select">
+                                                        <option th:each="item :${categoria}"
+                                                                th:value="${item.idCategoria}"
+                                                                th:text="${item.descripcion}"></option>
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="descripcion">[[#{producto.descripcion}]]</label>
                                                     <input type="text" class="form-control" 
                                                            name="descripcion" th:field="*{descripcion}"
-                                                           required="true">
+                                                           required="true"/>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="detalle">[[#{producto.detalle}]]</label>
                                                     <input type="text" class="form-control" 
                                                            name="detalle" th:field="*{detalle}"
-                                                           required="true">
+                                                           required="true"/>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="precio">[[#{producto.descripcion}]]</label>
@@ -185,7 +185,7 @@
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="existencias">[[#{producto.descripcion}]]</label>
-                                                    <input type="number" class="form-control" name="existencias" th:field="*{existencias} required="true"/>
+                                                    <input type="number" class="form-control" name="existencias" th:field="*{existencias}" required="true"/>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="activo">[[#{producto.activo}]]</label>

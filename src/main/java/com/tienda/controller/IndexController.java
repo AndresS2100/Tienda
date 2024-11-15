@@ -1,4 +1,3 @@
-//sEGUNDO CONTROLLER CLASS
 package com.tienda.controller;
 
 import org.springframework.stereotype.Controller;
