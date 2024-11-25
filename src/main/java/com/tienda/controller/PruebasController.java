@@ -84,4 +84,13 @@ public class PruebasController {
         model.addAttribute("precioSup", precioSup);
         return "/pruebas/listado2";
     }
+    
+    @PostMapping("/BusquedaExistencia")
+    public String consultaBusquedaExistencia(@RequestParam(value = "searchExistence") String existencia, Model model) {
+        List<Producto> productos = productoService.buscarExistencia(0);
+        model.addAttribute("productos", productos);
+        model.addAttribute("totalProductos", productos.size());
+        model.addAttribute("searchExistence", existencia);
+        return "/pruebas/listado2";
+    }
 }

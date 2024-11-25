@@ -8,7 +8,7 @@
     <body>
         <!-- 1 Sección para crear el boton de agregar... llamará a una ventana modal-->
         <section th:fragment="botonesAgregar" class="py-4 mb-4 bg-light">
-            <div class="container">
+            <div class="container" sec:authorize="hasRole('ROLE_ADMIN')">
                 <div class="row">
                     <div class="col-md-3">   
                         <button 
@@ -112,10 +112,10 @@
                                             <td>[[${producto.existencias}]]</td>
                                             <td th:text="${producto.activo} ? 'Activa' : 'Inactiva'" />
                                             <td><a th:href="@{/producto/eliminar/}+${producto.idProducto}"
-                                                   class="btn btn-danger">
+                                                   class="btn btn-danger" sec:authorize="hasRole('ROLE_ADMIN')">
                                                     <i class="fas fa-trash"></i> [[#{accion.eliminar}]]</a>
                                                 <a th:href="@{/producto/modificar/}+${producto.idProducto}"
-                                                   class="btn btn-success">
+                                                   class="btn btn-success" sec:authorize="hasRole('ROLE_ADMIN')">
                                                     <i class="fas fa-pencil"></i> [[#{accion.actualizar}]]</a></td></tr>
                                     </tbody>
                                 </table>
@@ -232,6 +232,31 @@
                         </button>
                     </div>
                 </div>
+            </div>
+            <h1 id="tituloPrincipal" style="text-align:center"> <span class="parrafoNegrita">Buscador por numero del listado de productos</span> </h1>
+            <div class="row py-2">
+                <div class="col-md-4"></div> 
+                <div class="col-md-5">                    
+                    <form method="POST" th:action="@{/pruebas/BusquedaExistencia}" 
+                          class="was-validated">
+                        <div class="card-body">
+                            <div class="input-group mb-3">
+                                <span class ="input-group-text" id="basic-addon1"> <i class="fa fa-search"></i> </span>
+                              <input type="text" class="form-control"
+                                     th:name="searchExistence"
+                                     th:value="${searchExistence}"
+                                     placeholder="Buscar Listado de productos por numero" aria-label="Username" aria-describedby="basic-addon1"
+                                     required>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button type="button" class="btn btn-success">
+                                <i class="fas fa-check"></i> Buscar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4"></div>  
             </div>
         </section>
     </body>
